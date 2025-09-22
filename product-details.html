@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Details - HP | Production</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        font-family: 'Poppins', sans-serif;
+    }
+    .navbar{
+        display: flex;
+        align-items: center;
+        padding: 20px;
+    }
+    nav{
+        flex: 1;
+        text-align: right;
+    }
+    nav ul{
+        display: inline-block;
+        list-style-type: none;
+    }
+    nav ul li{
+        display: inline-block;
+        margin-right: 20px;
+    }
+    a{
+        text-decoration: none;
+        color: #555;
+    }
+    p{
+        color: #555;
+    }
+    .container{
+        max-width: 1300px;
+        margin: auto;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .row{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .col-2{
+        flex-basis: 50%;
+        min-width: 300px;
+    }
+    .col-2 img{
+        max-width: 100%;
+        padding: 50px 0;
+    }
+    .col-2 h1{
+        font-size: 50px;
+        line-height: 60px;
+        margin: 25px 0;
+    }
+    .btn{
+        display: inline-block;
+        background: #ff523b;
+        color: #fff;
+        padding: 8px 30px;
+        margin: 30px 0;
+        border-radius: 30px;
+        transition: 0.5s;
+    }
+    .btn:hover{
+        background: #563434;
+    }
+    .header{
+        background: radial-gradient(#fff,#ffd6d6);
+    }
+    .header .row{
+        margin-top: 70px;
+    }
+    .categories{
+        margin: 70px 0;
+    }
+    .col-3{
+        flex-basis: 30%;
+        min-width: 250px;
+        margin-bottom: 30px;
+    }
+    .col-3 img{
+        width: 100%;
+    }
+    .small-container{
+        max-width: 1080px;
+        margin: auto;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .col-4{
+        flex-basis: 25%;
+        padding: 10px;
+        min-width: 200px;
+        margin-bottom: 50px;
+        transition: 0.5s;
+    }
+    .col-4 img{
+        width: 100%;
+    }
+    .title{
+        text-align: center;
+        margin: 0 auto 80px;
+        position: relative;
+        line-height: 60px;
+        color: #555;
+    }
+    .title::after{
+        content: '';
+        background: #ff523b;
+        width: 80px;
+        height: 5px;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    h4{
+        color: #555;
+        font-weight: normal;
+    }
+    .col-4 p{
+        font-size: 14px;
+    }
+    .rating .fa{
+        color: #ff523b;
+    }
+    .col-4:hover{
+        transform: translateY(-5px);
+    }
+    .offer{
+        background: radial-gradient(#fff, #ffd6d6);
+        margin-top: 80px;
+        padding: 30px 0;
+    }
+    .col-2 .offer-img{
+        padding: 50px;
+    }
+    small{
+        color: #555;
+    }
+
+    .testimonial{
+        padding-top: 100px;
+    }
+    .testimonial .col-3{
+        text-align: center;
+        padding: 40px 20px;
+        box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+        cursor: pointer;
+        transition: 0.5s;
+    }
+    .testimonial .col-3 img{
+        width: 50px;
+        margin-top: 20px;
+        border-radius: 50%;
+    }
+    .testimonial .col-3:hover{
+        transform: translateY(-10px);
+    }
+    .fa.fa-quote-left{
+        font-size: 34px;
+        color: #ff523b;
+    }
+    .col-3 p{
+        font-size: 12px;
+        margin: 12px 0;
+        color: #777;
+    }
+    .testimonial .col-3 h3{
+        font-weight: 600;
+        color: #555;
+        font-size: 16px;
+    }
+
+    .brands{
+        margin: 100px auto;
+    }
+    .col-5{
+        width: 160px;
+    }
+    .col-5 img{
+        width: 100%;
+        margin-top: 60px;
+        margin-bottom: 60px;
+        cursor: pointer;
+        filter: grayscale(100%);
+    }
+    .col-5 img:hover{
+        filter: grayscale(0);
+    }
+
+    .footer{
+        background-color: #000;
+        color: #8a8a8a;
+        font-size: 14px;
+        padding: 60px 0 20px;
+    }
+    .footer p{
+        color: #8a8a8a;
+    }
+    .footer h3{
+        color: #fff;
+        margin-bottom: 20px;
+    }
+    .footer-col-1, .footer-col-2, .footer-col-3,.footer-col-4{
+        min-width: 250px;
+       margin-bottom: 20px;
+    }
+    .footer-col-1{
+        flex-basis: 30%;
+    }
+    .footer-col-2{
+        flex: 1;
+        text-align: center;
+    }
+    .footer-col-2 img{
+        width: 180px;
+        margin-bottom: 20px;
+    }
+    .footer-col-3, .footer-col-4{
+        flex-basis: 12%;
+        text-align: center;
+    }
+    ul{
+        list-style-type: none;
+    }
+    .app-logo{
+        margin-top: 20px;
+    }
+    .app-logo img{
+        width: 140px;
+    }
+    .footer hr{
+        border: none;
+        background: #b5b5b5;
+        height: 1px;
+        margin: 20px 0;
+    }
+    .copyright{
+        text-align: center;
+    }
+    .menu-icon{
+        width: 28px;
+        margin-left: 20px;
+        display: none;
+    }
+    @media only screen and (max-width: 800px){
+        nav ul{
+            position: absolute;
+            top: 70px;
+            left: 0;
+            background: #333;
+            width: 100%;
+            overflow: hidden;
+            transition: max-height 0.5s;
+        }
+        nav ul li{
+            display: block;
+            margin-right: 50px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        nav ul li a{
+            color: #fff;
+        }
+        .menu-icon{
+            display: block;
+            cursor: pointer;
+        }
+    }
+    @media only screen and (max-width: 600px){
+        .row{
+            text-align: center;
+        }
+        .col-2, .col-3, .col-4{
+            flex-basis: 100%;
+        }
+    }
+    .row-2{
+        justify-content: space-between;
+        margin: 100px auto 50px;
+    }
+    select{
+        border: 1px solid #ff523b;
+        padding: 5px;
+    }
+    select:focus{
+        outline: none;
+    }
+    .page-btn{
+        margin: 0 auto 80px;
+    }
+    .page-btn span{
+        display: inline-block;
+        border: 1px solid #ff523b;
+        margin-left: 10px;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        cursor: pointer;
+    }
+    .page-btn span:hover{
+        background: #ff523b;
+        color: #fff;
+    }
+    .single-product{
+        margin-top: 5px;
+    }
+    .single-product .col-2 img{
+        padding: 0;
+    }
+    .single-product .col-2{
+        padding: 20px;
+    }
+    .single-product h4{
+        margin: 20px 0;
+        font-size: 22px;
+        font-weight: bold;
+    }
+    .single-product select{
+        display: block;
+        padding: 10px;
+        margin-top: 20px;
+    }
+    .single-product input{
+        width: 50px;
+        height: 40px;
+        padding-left: 10px;
+        font-size: 20px;
+        margin-right: 10px;
+        border: 1px solid #ff523b;
+        }
+        input:focus{
+            outline: none;
+        }
+        .single-product .fa{
+            color: #ff523b;
+            margin-left: 10px;
+        }
+        .small-img-row{
+            display: flex;
+            justify-content: space-between;
+        }
+        .small-img-col{
+            flex-basis: 24%;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 600px){
+            .row{
+                text-align: center;
+            }
+            .col-2, .col-3, .col-4{
+                flex-basis: 100%;
+            }
+            .single-product .row{
+                text-align: left;
+            }
+            .single-product .col-2{
+                padding: 20px 0;
+            }
+            .single-product h1{
+                font-size: 26px;
+                line-height: 32px;
+            }
+        }
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="images/haris.jpg" width="125px">
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="About Us.html">About</a></li>
+                    <li><a href="Contact.html">Contacts</a></li>
+                    <li><a href="bscs.html">Account</a></li>
+                </ul>
+            </nav>
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+            </div>  
+    </div>
+    <!--------------- single prduct details ------------>
+
+<div class="small-container single-product">
+    <div class="row">
+        <div class="col-2">
+            <img src="images/gallery-1.jpg" width="100%" id="ProductImg">
+            <div class="small-img-row">
+            <div class="small-img-col">
+                <img src="images/gallery-1.jpg" width="100%" class="small-img">
+            </div>
+            <div class="small-img-col">
+                <img src="images/gallery-2.jpg" width="100%" class="small-img">
+            </div>
+                <div class="small-img-col">
+                    <img src="images/gallery-3.jpg" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="images/gallery-4.jpg" width="100%" class="small-img">
+                </div>
+            </div>
+
+        </div>
+        <div class="col-2">
+            <p>Home / T-Shirt</p>
+            <h1>Red Printed T-Shirt by PUMA</h1>
+            <h4>$40.00</h4>
+            <select>
+                <option>Select Size</option>
+                <option>XXL</option>
+                <option>XL</option>
+                <option>Large</option>
+                <option>Medium</option>
+                <option>Small</option>
+            </select>
+            <input type="number" value="1">
+            <h3>Product Details  <i class="fa fa-indent"></i></h3>
+            <br>
+            <p>The most effective way to authenticate a PUMA T-shirt would be to verify its labels. The Gucci tags use specific fonts that are rarely copied well by the replica manufacturers.
+            </p>
+            </div>
+        </div>
+    </div>
+    <!--------- Title --------->
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>Related Products</h2>
+        </div>
+    </div>
+
+
+
+    <div class="small-container">
+
+   <div class="row">
+            <div class="col-4">
+                <img src="images/product-9.jpg">
+                <h4>ROADSTER Black Colored Watch</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$30.00</p>
+            </div>
+            <div class="col-4">
+                <img src="images/product-10.jpg">
+                <h4>HRX Red & Black Combo Shoes</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$40.00</p>
+            </div>
+            <div class="col-4">
+                <img src="images/product-11.jpg">
+                <h4>Adidas Silver Pair of Shoes</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>$25.00</p>
+            </div>
+            <div class="col-4">
+                <img src="images/product-12.jpg">
+                <h4>Nike White Pair Of Shoes</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>$60.00</p>
+            </div>
+        </div>
+      
+    </div>
+<!------------- footer ------------->
+<div class="footer">
+<div class="container">
+    <div class="row">
+        <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Download App for Android and ios mobile phone.</p>
+            <div class="app-logo">
+                <img src="images/play-store.png">
+                <img src="images/app-store.png">
+
+            </div>
+            </div>
+        
+        <div class="footer-col-2">
+            <img src="images/haris.jpg">
+            <p>Our Purpose Is To Sustainably Make The Pleasure.</p>
+        </div>
+        <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+                <li>Return Policy</li>
+                <li>Blog Post</li>
+                <li>Coupons</li>
+                <li>Join Affiliate</li>
+            </ul>
+        </div>
+        <div class="footer-col-4">
+            <h3>Follow Us</h3>
+            <ul>
+                <li>Instagram</li>
+                <li>YouTube</li>
+                <li>Facebook</li>
+                <li>Twitter</li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <p class="copyright">Copyright 2022 - HP | PRODUCTION</p>
+</div>
+</div>
+<!----js toggle menu------>
+<script>
+    var MenuItems = document.getElementById("MenuItems");
+    MenuItems.style.maxHeight = "0px";
+    function menutoggle(){
+        if(MenuItems.style.maxHeight == "0px"){
+            MenuItems.style.maxHeight = "200px";
+        }
+        else{
+            MenuItems.style.maxHeight = "0px";
+        }
+    }
+</script>
+
+<!-------- JS FOR PRODUCT GALLERY ------------------->
+<script>
+    var ProductImg = document.getElementById("ProductImg");
+    var SmallImg = document.getElementsByClassName("small-img");
+    SmallImg[0].onclick = function(){
+        ProductImg.src = SmallImg[0].src;
+    }
+    SmallImg[1].onclick = function(){
+        ProductImg.src = SmallImg[1].src;
+    }
+    SmallImg[2].onclick = function(){
+        ProductImg.src = SmallImg[2].src;
+    }
+    SmallImg[3].onclick = function(){
+        ProductImg.src = SmallImg[3].src;
+    }
+
+</script>
+</body>
+</html>
