@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account - HP | Production</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="account.css" >
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="images/haris.jpg" width="125px">
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="About Us.html">About</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+            <img src="images/cart.png" width="30px" height="30px">
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+            </div>  
+    </div>
+
+    <!--------- ACCOUNT PAGE ----------->
+
+    <div class="account-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="images/image1.png" width="80%">
+                </div>
+                <div class="col-2">
+                    <div class="form-container">
+                        <div class="form-btn">
+                            <span onclick="login()">Login</span>
+                            <span onclick="register()">Register</span>
+                            <hr id="Indicator">
+                        </div>
+                        <div class="fa-icons">
+                            <a href="https://web.facebook.com/campaign/landing.php?campaign_id=1653377901&extra_1=s%7Cc%7C318307045126%7Ce%7Cfacebook%27%7C&placement&creative=318307045126&keyword=facebook%27&partner_id=googlesem&extra_2=campaignid%3D1653377901%26adgroupid%3D65139789042%26matchtype%3De%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-362360550869%26loc_physical_ms%3D1011086%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=EAIaIQobChMIsciXqpvP9wIVmN1RCh05BAAeEAAYASAAEgKAovD_BwE&_rdc=1&_rdr" class="fa fa-facebook"></a>
+                            <a href="https://twitter.com/i/flow/login" class="fa fa-twitter"></a>
+                            <a href="https://accounts.google.com/ServiceLogin/signinchooser?hl=en&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAZAmgQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin" class="fa fa-google"></a>
+
+                        </div>
+                        <form id="LoginForm">
+                            <input type="text" placeholder="Username">
+                            <br>
+                            <input type="password" placeholder="Password">
+                            <button type="submit" class="btn">Login</button>
+                            <br>
+                            <a href="">Forgot password</a>
+                        </form>
+
+                    <form id="RegForm">
+                        <input type="text" placeholder="Username">
+                        <br>
+                        <input type="email" placeholder="Email">
+                        <br>
+                        <input type="password" placeholder="Password">
+                        <button type="submit" class="btn">Register</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    
+
+<!------------- footer ------------->
+<div class="footer">
+<div class="container">
+    <div class="row">
+        <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Download App for Android and ios mobile phone.</p>
+            <div class="app-logo">
+                <img src="images/play-store.png">
+                <img src="images/app-store.png">
+
+            </div>
+            </div>
+        
+        <div class="footer-col-2">
+            <img src="images/haris.jpg">
+            <p>Our Purpose Is To Sustainably Make The Pleasure.</p>
+        </div>
+        <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+                <li>Return Policy</li>
+                <li>Blog Post</li>
+                <li>Coupons</li>
+                <li>Join Affiliate</li>
+            </ul>
+        </div>
+        <div class="footer-col-4">
+            <h3>Follow Us</h3>
+            <ul>
+                <li>Instagram</li>
+                <li>YouTube</li>
+                <li>Facebook</li>
+                <li>Twitter</li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <p class="copyright">Copyright 2022 - HP | PRODUCTION</p>
+</div>
+</div>
+<!----js toggle menu------>
+<script>
+    var MenuItems = document.getElementById("MenuItems");
+    MenuItems.style.maxHeight = "0px";
+    function menutoggle(){
+        if(MenuItems.style.maxHeight == "0px"){
+            MenuItems.style.maxHeight = "200px";
+        }
+        else{
+            MenuItems.style.maxHeight = "0px";
+        }
+    }
+</script>
+
+<!-------------- JS FOR TOGGLE FORM --------------------->
+
+<script>
+    var LoginForm = document.getElementById("LoginForm");
+    var RegForm = document.getElementById("RegForm");
+    var Indicator = document.getElementById("Indicator");
+
+    function register(){
+        RegForm.style.transform = "translateX(0px)";
+        LoginForm.style.transform = "translateX(0px)";
+        Indicator.style.transform = "translateX(100px)";
+    }
+
+    function login(){
+        RegForm.style.transform = "translateX(300px)";
+        LoginForm.style.transform = "translateX(300px)";
+        Indicator.style.transform = "translateX(0px)";
+    }
+
+
+
+</script>
+
+
+</body>
+</html>
